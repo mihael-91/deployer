@@ -18,11 +18,12 @@ server('production', 'azzryel.com')
     ->identityFile()
     ->env('deploy_path', '/var/www/hram.azzryel.com');
 
-/*server('beta', 'beta.domain.com')
-    ->user('username')
-    ->password()
-    ->env('deploy_path', '/var/www/beta.domain.com');
-*/
+server('dev', 'azzryel.com')
+  ->user('root')
+  ->identityFile()
+  ->env('deploy_path', '/var/www/dev.hram.azzryel.com')
+  -env('branch', 'test');
+
 /**
  * Restart php-fpm on success deploy.
  */
